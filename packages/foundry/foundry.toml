@@ -4,6 +4,11 @@ out = 'out'
 libs = ['lib', 'node_modules']
 fs_permissions = [{ access = "read-write", path = "./"}]
 
+# Enable IR-based code generator to fix "Stack too deep" errors
+via_ir = true
+optimizer = true
+optimizer_runs = 200
+
 
 [rpc_endpoints]
 default_network = "http://127.0.0.1:8545"

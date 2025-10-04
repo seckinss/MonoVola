@@ -4,6 +4,1614 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    MockUniswapV3Pool: {
+      address: "0xb19b36b1456e65e3a6d514d3f715f204bd59f431",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "increaseObservationCardinalityNext",
+          inputs: [
+            {
+              name: "observationCardinalityNext",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "observationCardinality",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "observe",
+          inputs: [
+            {
+              name: "secondsAgos",
+              type: "uint32[]",
+              internalType: "uint32[]",
+            },
+          ],
+          outputs: [
+            {
+              name: "tickCumulatives",
+              type: "int56[]",
+              internalType: "int56[]",
+            },
+            {
+              name: "liquidityCumulatives",
+              type: "uint160[]",
+              internalType: "uint160[]",
+            },
+          ],
+          stateMutability: "view",
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 2,
+    },
+    HourlyVolatilityParimutuel: {
+      address: "0x8ce361602b935680e8dec218b820ff5056beb7af",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [
+            {
+              name: "_quoteToken",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_poolWethUsdc",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_poolWmonUsdc",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_stepSeconds",
+              type: "uint32",
+              internalType: "uint32",
+            },
+            {
+              name: "_finalityDelaySeconds",
+              type: "uint32",
+              internalType: "uint32",
+            },
+            {
+              name: "_resolveDeadlineSeconds",
+              type: "uint32",
+              internalType: "uint32",
+            },
+            {
+              name: "_treasury",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_keeperBountyBps",
+              type: "uint16",
+              internalType: "uint16",
+            },
+            {
+              name: "_protocolFeeBps",
+              type: "uint16",
+              internalType: "uint16",
+            },
+            {
+              name: "_minObservationCardinality",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "CYCLE_DURATION",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "MAX_FEE_BPS",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "PREDICTION_WINDOW",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "SUBSCRIPTION_WINDOW",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "cancelStake",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "yesSide",
+              type: "bool",
+              internalType: "bool",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "claim",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "claimBatch",
+          inputs: [
+            {
+              name: "cycles",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "currentCycleIndex",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "cycleIndexAt",
+          inputs: [
+            {
+              name: "ts",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+        },
+        {
+          type: "function",
+          name: "ensureObservationCardinality",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "finalityDelaySeconds",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getClaimableRounds",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "lookbackCycles",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "claimableCycles",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+            {
+              name: "amounts",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getGlobalStats",
+          inputs: [],
+          outputs: [
+            {
+              name: "volume",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "roundsResolved",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "currentRound",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getOrInitRound",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "r",
+              type: "tuple",
+              internalType: "struct HourlyVolatilityParimutuel.Round",
+              components: [
+                {
+                  name: "startTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "subscriptionEndTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "endTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "resolved",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "voided",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMoreVolatile",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "monMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalYes",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalNo",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "bountyPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "protocolPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+              ],
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "getRecentRounds",
+          inputs: [
+            {
+              name: "count",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "_rounds",
+              type: "tuple[]",
+              internalType: "struct HourlyVolatilityParimutuel.Round[]",
+              components: [
+                {
+                  name: "startTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "subscriptionEndTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "endTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "resolved",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "voided",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMoreVolatile",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "monMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalYes",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalNo",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "bountyPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "protocolPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+              ],
+            },
+            {
+              name: "cycleIds",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getRound",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "tuple",
+              internalType: "struct HourlyVolatilityParimutuel.Round",
+              components: [
+                {
+                  name: "startTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "subscriptionEndTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "endTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "resolved",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "voided",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMoreVolatile",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "monMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalYes",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalNo",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "bountyPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "protocolPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+              ],
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getRounds",
+          inputs: [
+            {
+              name: "cycles",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+          ],
+          outputs: [
+            {
+              name: "_rounds",
+              type: "tuple[]",
+              internalType: "struct HourlyVolatilityParimutuel.Round[]",
+              components: [
+                {
+                  name: "startTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "subscriptionEndTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "endTs",
+                  type: "uint64",
+                  internalType: "uint64",
+                },
+                {
+                  name: "resolved",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "voided",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMoreVolatile",
+                  type: "bool",
+                  internalType: "bool",
+                },
+                {
+                  name: "ethMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "monMetric",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalYes",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "totalNo",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "bountyPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+                {
+                  name: "protocolPaid",
+                  type: "uint256",
+                  internalType: "uint256",
+                },
+              ],
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getUserPositions",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "cycles",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+          ],
+          outputs: [
+            {
+              name: "yesStakes",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+            {
+              name: "noStakes",
+              type: "uint256[]",
+              internalType: "uint256[]",
+            },
+            {
+              name: "claimed",
+              type: "bool[]",
+              internalType: "bool[]",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "getUserStats",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "wagered",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "won",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "profit",
+              type: "int256",
+              internalType: "int256",
+            },
+            {
+              name: "roundsPlayed",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "roundsWon",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "winRate",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "keeperBountyBps",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "minObservationCardinality",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "poolWETH_USDC",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract IUniswapV3Pool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "poolWMON_USDC",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract IUniswapV3Pool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "protocolFeeBps",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint16",
+              internalType: "uint16",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "quoteToken",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract IERC20",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "resolve",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "resolveDeadlineSeconds",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "rounds",
+          inputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "startTs",
+              type: "uint64",
+              internalType: "uint64",
+            },
+            {
+              name: "subscriptionEndTs",
+              type: "uint64",
+              internalType: "uint64",
+            },
+            {
+              name: "endTs",
+              type: "uint64",
+              internalType: "uint64",
+            },
+            {
+              name: "resolved",
+              type: "bool",
+              internalType: "bool",
+            },
+            {
+              name: "voided",
+              type: "bool",
+              internalType: "bool",
+            },
+            {
+              name: "ethMoreVolatile",
+              type: "bool",
+              internalType: "bool",
+            },
+            {
+              name: "ethMetric",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "monMetric",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "totalYes",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "totalNo",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "bountyPaid",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "protocolPaid",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "stakeNo",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "stakeYes",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "stepSeconds",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint32",
+              internalType: "uint32",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalRoundsResolved",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalVolume",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalWagered",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalWon",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "treasury",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "userClaimed",
+          inputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "userNo",
+          inputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "userRoundsPlayed",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "userRoundsWon",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "userYes",
+          inputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "event",
+          name: "Claimed",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              indexed: true,
+              internalType: "uint256",
+            },
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "payout",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "CycleInitialized",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              indexed: true,
+              internalType: "uint256",
+            },
+            {
+              name: "startTs",
+              type: "uint64",
+              indexed: false,
+              internalType: "uint64",
+            },
+            {
+              name: "subscriptionEndTs",
+              type: "uint64",
+              indexed: false,
+              internalType: "uint64",
+            },
+            {
+              name: "endTs",
+              type: "uint64",
+              indexed: false,
+              internalType: "uint64",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "CycleResolved",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              indexed: true,
+              internalType: "uint256",
+            },
+            {
+              name: "voided",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+            {
+              name: "ethMoreVolatile",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+            {
+              name: "ethMetric",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "monMetric",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "bountyPaid",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "protocolFeePaid",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "StakeCanceled",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              indexed: true,
+              internalType: "uint256",
+            },
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "yesSide",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "StakePlaced",
+          inputs: [
+            {
+              name: "cycle",
+              type: "uint256",
+              indexed: true,
+              internalType: "uint256",
+            },
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "yesSide",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "error",
+          name: "AlreadyResolved",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "CycleEnded",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "InvalidParams",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "NothingToClaim",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "ObservationFailed",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "TooEarly",
+          inputs: [],
+        },
+        {
+          type: "error",
+          name: "ZeroAmount",
+          inputs: [],
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 3,
+    },
+    MockUSDC: {
+      address: "0x700b6a60ce7eaaea56f065753d8dcb9653dbad35",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "allowance",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "approve",
+          inputs: [
+            {
+              name: "spender",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "balanceOf",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "decimals",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint8",
+              internalType: "uint8",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "mint",
+          inputs: [
+            {
+              name: "to",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "name",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "string",
+              internalType: "string",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "symbol",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "string",
+              internalType: "string",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalSupply",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "transfer",
+          inputs: [
+            {
+              name: "to",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "transferFrom",
+          inputs: [
+            {
+              name: "from",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "to",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "Approval",
+          inputs: [
+            {
+              name: "owner",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "spender",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "value",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "Transfer",
+          inputs: [
+            {
+              name: "from",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "to",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "value",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 1,
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hardhat } from "viem/chains";
-import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BugAntIcon, ChartBarIcon, ClockIcon, FireIcon, GiftIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
 
@@ -19,6 +19,26 @@ export const menuLinks: HeaderMenuLink[] = [
   {
     label: "Home",
     href: "/",
+  },
+  {
+    label: "Predict",
+    href: "/predict",
+    icon: <FireIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Dashboard",
+    href: "/dashboard",
+    icon: <ChartBarIcon className="h-4 w-4" />,
+  },
+  {
+    label: "History",
+    href: "/history",
+    icon: <ClockIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Claims",
+    href: "/claims",
+    icon: <GiftIcon className="h-4 w-4" />,
   },
   {
     label: "Debug Contracts",
@@ -86,8 +106,8 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">Scaffold-ETH</span>
-            <span className="text-xs">Ethereum dev stack</span>
+            <span className="font-bold leading-tight">Monad Predict</span>
+            <span className="text-xs">Volatility prediction market</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">

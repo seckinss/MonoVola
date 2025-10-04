@@ -8,6 +8,7 @@
     "account:import": "node scripts-js/importAccount.js",
     "account:reveal-pk": "node scripts-js/revealPK.js",
     "chain": "make chain",
+    "chain:keep-alive": "node scripts-js/keepBlockchainAlive.js",
     "clean": "forge clean",
     "compile": "make compile",
     "deploy": "node scripts-js/parseArgs.js",
