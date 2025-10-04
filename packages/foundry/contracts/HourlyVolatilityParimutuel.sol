@@ -102,13 +102,13 @@ contract HourlyVolatilityParimutuel is ReentrancyGuard {
     IUniswapV3Pool public immutable poolWMON_USDC;
 
     /// @notice Subscription phase duration (users can stake during this period)
-    uint32 public constant SUBSCRIPTION_WINDOW = 30 seconds; // 30 seconds (FAST DEMO)
+    uint32 public constant SUBSCRIPTION_WINDOW = 60 seconds; // 60 seconds (FAST DEMO)
 
-    /// @notice Prediction phase duration (1 minute for volatility measurement)
-    uint32 public constant PREDICTION_WINDOW = 60 seconds; // 60 seconds (FAST DEMO)
+    /// @notice Prediction phase duration (2 minutes for volatility measurement)
+    uint32 public constant PREDICTION_WINDOW = 120 seconds; // 120 seconds (FAST DEMO)
 
     /// @notice Total cycle length (subscription + prediction)
-    uint32 public constant CYCLE_DURATION = 90 seconds; // 90 seconds (FAST DEMO)
+    uint32 public constant CYCLE_DURATION = 180 seconds; // 180 seconds (FAST DEMO)
 
     /// @notice Sampling step inside prediction window; e.g., 300 (5min) or 600 (10min). Must divide PREDICTION_WINDOW.
     uint32 public immutable stepSeconds; // e.g., 300 (5min)

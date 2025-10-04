@@ -30,7 +30,7 @@ contract DeployYourContract is ScaffoldETHDeploy {
         // ╚══════════════════════════════════════════════════════════════════════╝
         
         // Monad Testnet Token Addresses
-        address quoteToken = 0xf817257fed379853cDe0fa4F97AB987181B1E5Ea; // USDC on Monad testnet
+        address quoteToken = 0x9CcEa80798D86Cf988f37B419146E0158866096A; // USDC on Monad testnet
         // address weth = 0xB5a30b0FDc42e3E9760Cb8449Fb37; // WETH on Monad testnet
         // address wmon = 0xcf5a6076cfa32686c0Df13aBaDa2b40dec133F1d; // WMON on Monad testnet
         

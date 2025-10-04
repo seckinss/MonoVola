@@ -11,11 +11,11 @@
 
 ---
 
-## ⏱️ Cycle Timeline (90 seconds total - FAST DEMO MODE)
+## ⏱️ Cycle Timeline (180 seconds total - FAST DEMO MODE)
 
 ```
 ┌─────────┬───────────────────────────────┬─────────┐
-│ 0-30sec │ 30sec-90sec                   │ 100sec+ │
+│ 0-60sec │ 60sec-180sec                  │ 100sec+ │
 │ BET     │ PREDICT (measure volatility)  │ RESOLVE │
 │ Place   │ Wait for results              │ Claim   │
 └─────────┴───────────────────────────────┴─────────┘
@@ -384,14 +384,14 @@ export default function BettingInterface() {
 
 ## 📋 Contract Deployment Info
 
-**Contract Address:** `0x12975173B87F7595EE45dFFb2Ab812ECE596Bf84` (local testnet)
+**Contract Address:** `0x9CA6B4349e7EAf4aA9DAa8d27BBEf438906fde1a` (local testnet)
 
 **Network:** Anvil Local (chainId: 31337)
 
 **⚡ FAST DEMO MODE CONFIGURATION:**
-- **Cycle Duration:** 90 seconds (30 sec bet + 60 sec predict)
-- **Step Seconds:** 30 (30-second sampling intervals)
-- **Finality Delay:** 10 seconds (resolve at 100 seconds)
+- **Cycle Duration:** 180 seconds (60 sec bet + 120 sec predict)
+- **Step Seconds:** 60 (60-second sampling intervals)
+- **Finality Delay:** 5 seconds (resolve at 100 seconds)(someone gotta participate to resolve it and getting rewards for it)
 - **Quote Token:** USDC (placeholder on testnet)
 - **Keeper Bounty:** 10 bps (0.1%)
 - **Protocol Fee:** 20 bps (0.2%)

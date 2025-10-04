@@ -335,11 +335,11 @@ const PredictPage: NextPage = () => {
     <div className="flex flex-col items-center pt-10 px-4 w-full">
       {/* Hero Section */}
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent dark:text-white/90">
           Volatility Prediction Market
         </h1>
         <p className="text-xl text-base-content/70">Will ETH or MON be more volatile? Place your bets!</p>
-        <div className="badge badge-warning mt-2">⚡ Fast Demo Mode: 90-second cycles</div>
+        <div className="badge badge-warning mt-2">⚡ Fast Demo Mode: 180-second cycles</div>
       </div>
 
       {/* Cycle Info Card */}
@@ -372,11 +372,11 @@ const PredictPage: NextPage = () => {
                 )}
               </div>
             </div>
-            <div className="stats shadow">
+            <div className="stats shadow text-base-content">
               <div className="stat place-items-center">
-                <div className="stat-title">Total Pool</div>
-                <div className="stat-value text-primary">${totalPot.toFixed(2)}</div>
-                <div className="stat-desc">USDC</div>
+                <div className="stat-title text-base-content/80">Total Pool</div>
+                <div className="stat-value text-primary dark:text-primary-content">${totalPot.toFixed(2)}</div>
+                <div className="stat-desc text-base-content/60">USDC</div>
               </div>
             </div>
           </div>
@@ -401,7 +401,7 @@ const PredictPage: NextPage = () => {
                     {phase === "BETTING" && <div className="badge badge-success badge-sm">ACTIVE</div>}
                     {phase === "PREDICTING" && <div className="badge badge-ghost badge-sm">CLOSED</div>}
                   </div>
-                  <div className="text-sm text-base-content/70">Duration: 30 seconds</div>
+                  <div className="text-sm text-base-content/70">Duration: 60 seconds</div>
                   {phase === "BETTING" && (
                     <div className="mt-2">
                       <div className="text-lg font-mono font-bold text-success">
@@ -409,8 +409,8 @@ const PredictPage: NextPage = () => {
                       </div>
                       <progress
                         className="progress progress-success w-full mt-1"
-                        value={round ? 30 - (Number(round.subscriptionEndTs) - displayTime) : 0}
-                        max={30}
+                        value={round ? 60 - (Number(round.subscriptionEndTs) - displayTime) : 0}
+                        max={60}
                       ></progress>
                     </div>
                   )}
@@ -432,7 +432,7 @@ const PredictPage: NextPage = () => {
                     {phase === "PREDICTING" && <div className="badge badge-warning badge-sm">ACTIVE</div>}
                     {phase === "BETTING" && <div className="badge badge-ghost badge-sm">PENDING</div>}
                   </div>
-                  <div className="text-sm text-base-content/70">Duration: 60 seconds</div>
+                  <div className="text-sm text-base-content/70">Duration: 120 seconds</div>
                   {phase === "PREDICTING" && (
                     <div className="mt-2">
                       <div className="text-lg font-mono font-bold text-warning">
@@ -440,8 +440,8 @@ const PredictPage: NextPage = () => {
                       </div>
                       <progress
                         className="progress progress-warning w-full mt-1"
-                        value={round ? 60 - (Number(round.endTs) - displayTime) : 0}
-                        max={60}
+                        value={round ? 120 - (Number(round.endTs) - displayTime) : 0}
+                        max={120}
                       ></progress>
                     </div>
                   )}
@@ -467,16 +467,18 @@ const PredictPage: NextPage = () => {
                       ETH More Volatile
                     </h3>
                   </div>
-                  <div className="stats bg-base-200 mb-4 w-full">
+                  <div className="stats bg-base-200 mb-4 w-full text-base-content">
                     <div className="stat">
-                      <div className="stat-title">Pool</div>
-                      <div className="stat-value text-primary">
+                      <div className="stat-title text-base-content/80">Pool</div>
+                      <div className="stat-value text-primary dark:text-primary-content">
                         ${round ? Number(formatUnits(round.totalYes, 6)).toFixed(2) : "0.00"}
                       </div>
                     </div>
                     <div className="stat">
-                      <div className="stat-title">Odds</div>
-                      <div className="stat-value text-primary">{odds.yesOdds.toFixed(2)}x</div>
+                      <div className="stat-title text-base-content/80">Odds</div>
+                      <div className="stat-value text-primary dark:text-primary-content">
+                        {odds.yesOdds.toFixed(2)}x
+                      </div>
                     </div>
                   </div>
                   <button
@@ -496,16 +498,18 @@ const PredictPage: NextPage = () => {
                       MON More Volatile
                     </h3>
                   </div>
-                  <div className="stats bg-base-200 mb-4 w-full">
+                  <div className="stats bg-base-200 mb-4 w-full text-base-content">
                     <div className="stat">
-                      <div className="stat-title">Pool</div>
-                      <div className="stat-value text-secondary">
+                      <div className="stat-title text-base-content/80">Pool</div>
+                      <div className="stat-value text-secondary dark:text-secondary-content">
                         ${round ? Number(formatUnits(round.totalNo, 6)).toFixed(2) : "0.00"}
                       </div>
                     </div>
                     <div className="stat">
-                      <div className="stat-title">Odds</div>
-                      <div className="stat-value text-secondary">{odds.noOdds.toFixed(2)}x</div>
+                      <div className="stat-title text-base-content/80">Odds</div>
+                      <div className="stat-value text-secondary dark:text-secondary-content">
+                        {odds.noOdds.toFixed(2)}x
+                      </div>
                     </div>
                   </div>
                   <button
@@ -827,13 +831,13 @@ const PredictPage: NextPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <div className="flex flex-col items-center text-center p-4">
               <div className="text-4xl mb-2">1️⃣</div>
-              <h3 className="font-bold text-lg mb-2">Bet (30 sec)</h3>
+              <h3 className="font-bold text-lg mb-2">Bet (60 sec)</h3>
               <p className="text-sm text-base-content/70">Place your bet on whether ETH or MON will be more volatile</p>
               <div className="badge badge-sm badge-success mt-1">Betting Window</div>
             </div>
             <div className="flex flex-col items-center text-center p-4">
               <div className="text-4xl mb-2">2️⃣</div>
-              <h3 className="font-bold text-lg mb-2">Predict (60 sec)</h3>
+              <h3 className="font-bold text-lg mb-2">Predict (120 sec)</h3>
               <p className="text-sm text-base-content/70">
                 Contract measures real volatility using Uniswap V3 price data
               </p>
@@ -841,9 +845,9 @@ const PredictPage: NextPage = () => {
             </div>
             <div className="flex flex-col items-center text-center p-4">
               <div className="text-4xl mb-2">3️⃣</div>
-              <h3 className="font-bold text-lg mb-2">Claim (after 90 sec)</h3>
+              <h3 className="font-bold text-lg mb-2">Claim (after 180 sec)</h3>
               <p className="text-sm text-base-content/70">Winners split the entire pot (parimutuel style)</p>
-              <div className="badge badge-sm badge-info mt-1">+ 10 sec finality</div>
+              <div className="badge badge-sm badge-info mt-1">+ 5 sec finality</div>
             </div>
           </div>
         </div>

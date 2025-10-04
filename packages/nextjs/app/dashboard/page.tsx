@@ -78,12 +78,12 @@ const DashboardPage: NextPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Total Wagered */}
-                <div className="stat bg-base-200 rounded-lg">
+                <div className="stat bg-base-200 rounded-lg text-base-content">
                   <div className="stat-figure text-primary">
                     <FireIcon className="w-8 h-8" />
                   </div>
-                  <div className="stat-title">Total Wagered</div>
-                  <div className="stat-value text-primary">${wagered.toFixed(2)}</div>
+                  <div className="stat-title text-base-content/80">Total Wagered</div>
+                  <div className="stat-value text-primary dark:text-primary-content">${wagered.toFixed(2)}</div>
                   <div className="stat-desc">All-time betting volume</div>
                 </div>
 
