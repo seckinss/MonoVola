@@ -16,7 +16,7 @@ const Home: NextPage = () => {
           <h1 className="text-center">
             <span className="block text-2xl mb-2">Welcome to</span>
             <span className="block text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent dark:text-white/90">
-              MonoVolo
+              MonoVola
             </span>
           </h1>
           <p className="text-center text-xl mt-4 mb-6 text-base-content/70">

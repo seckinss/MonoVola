@@ -106,7 +106,7 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer dark:invert" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">MonoVolo</span>
+            <span className="font-bold leading-tight">MonoVola</span>
             <span className="text-xs">Volatility prediction market</span>
           </div>
         </Link>
